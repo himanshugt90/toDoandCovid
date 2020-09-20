@@ -1,0 +1,26 @@
+.todo {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: .5rem;
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 8px;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.upcoming{
+    background-color: tomato;
+}
+.upcoming:hover{
+    background-color:silver;
+}
+.completed{
+    background-color:palegreen;
+}
+.completed:hover{
+    background-color:silver;
+}

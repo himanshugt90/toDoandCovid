@@ -1,0 +1,40 @@
+<template>
+    <lightning-layout multiple-rows="true">
+    <lightning-layout-item  size="12" class="slds-p-bottom_large" padding="horizontal-small" small-device-size="12" large-device-size="2">
+        <div class="country">
+            <p>Search For State:</p>
+        </div>     
+    </lightning-layout-item>
+    
+    
+    <lightning-layout-item  size="12" class="slds-p-bottom_large " padding="horizontal-small" small-device-size="12" large-device-size="2">
+        
+        <lightning-combobox name="general" 
+                            placeholder="Select a state" 
+                            variant="label-hidden"
+                            options={options}
+                            onchange={handleChange}>
+                        </lightning-combobox>
+    </lightning-layout-item>
+</lightning-layout>
+<template if:true={showDist}>
+    <div style="height:300px;">
+        <lightning-datatable
+                key-field="id"
+                data={indiaData}
+                columns={columnIndia}
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div> 
+</template>
+<template if:false={showDist}>
+    <div style="height:300px;">
+        <lightning-datatable
+                key-field="id"
+                data={selectedStateData}
+                columns={columnsDist}
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div>
+</template> 
+</template>

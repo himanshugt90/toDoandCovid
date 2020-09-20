@@ -1,0 +1,21 @@
+<template>
+    <div class="container">
+    <div class="navbar">
+        <div class="divcenter">
+        COVID19 TRACKER
+        </div>
+    </div>
+ 
+    <lightning-tabset variant="scoped">
+        <lightning-tab label="World">
+                <c-covid-world world-data={AllCountryCovid} ></c-covid-world>
+        </lightning-tab>
+        <lightning-tab label="India">
+            <c-covid-india india-data={AllIndiaCovid} options={options} show-dist=true></c-covid-india>
+    </lightning-tab>
+    <lightning-tab label="Graphs">
+        <c-covid-graphs  case-series={caseSeries}></c-covid-graphs>
+    </lightning-tab>
+    </lightning-tabset>
+    </div>
+</template>

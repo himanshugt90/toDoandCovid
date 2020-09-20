@@ -1,0 +1,37 @@
+<template>
+   
+    <lightning-layout multiple-rows="true" class="slds-align_absolute-center container">
+        <lightning-layout-item size="12">
+            <div class="time"> {time} </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+           <div class="greeting">{greetings}</div> 
+        </lightning-layout-item>
+        <lightning-layout-item size="12" class="slds-text-heading_large slds-m-vertical_large">
+            What's your main focus today?
+        </lightning-layout-item>
+        <lightning-layout-item size="12" large-device-size="6" medium-device-size="10" small-device-size="12">
+            <lightning-layout>
+                <lightning-layout-item size="11">
+                    <lightning-input type="text" label="What's in your mind" placeholder="What's in your mind" variant="label-hidden"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <lightning-button-icon icon-name="utility:add" onclick={addTaskHandler}></lightning-button-icon>
+                </lightning-layout-item>
+            </lightning-layout>
+         </lightning-layout-item>
+         <lightning-layout-item size="12">
+             <div>Upcoming</div>
+              <template for:each={upcomingTask} for:item="task">
+                 <c-to-do-task key={task.taskId} task={task} onupdate={handleUpdate} ondelete={handledelete}></c-to-do-task>
+             </template>
+             
+             <div>Completed</div>
+             <template for:each={completedTask} for:item="task">
+                <c-to-do-task key={task.taskId} task={task} onupdate={handleUpdate} ondelete={handledelete}></c-to-do-task>
+
+            </template>
+         </lightning-layout-item>
+    </lightning-layout>
+
+</template>
